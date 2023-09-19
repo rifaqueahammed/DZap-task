@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Layout from './pages/layout';
+import { AddressContext } from './context/addressContext';
+import { useState } from 'react';
 
 function App() {
+  const [address, setAddress] =useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AddressContext.Provider value={{address,setAddress}}>
+      <div className="App">
+        <Layout/>
+        </div>
+    </AddressContext.Provider>
   );
 }
 
