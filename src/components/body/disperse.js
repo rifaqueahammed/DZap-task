@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import Textarea from "./textarea";
-import { AddressContext } from "../context/addressContext";
+import { AddressContext } from "../../context/addressContext";
 import {
   validateaddressWithAmount,
   keepFirstOneAddress,
   combineBalancesAddress,
-} from "../helpers/helpers";
+} from "../../helpers/helpers";
+import TokenInput from "./tokenInput";
+import BodyHeader from "./bodyHeader";
 
 function Disperse() {
   const { address, setAddress } = useContext(AddressContext);
@@ -45,27 +47,14 @@ function Disperse() {
   };
 
   return (
-    <div className="bg-white m-5 p-10 flex flex-col rounded-lg gap-3">
+    <div className="flex flex-col gap-3">
       <div>
-        <h1>Scatter steps</h1>
+        <h1 className="">Scatter steps</h1>
       </div>
       <div className="flex flex-col rounded-lg gap-3">
-        <h3 className="text-2xl font-bold">Prepare to scatter</h3>
-        <div>
-          <p>We support the following Networks</p>
-        </div>
-        <div className="flex flex-col gap-1">
-          <label>Token Address</label>
-          <input
-            className="p-2 border border-black focus:outline-none active:outline-none"
-            type="text"
-            placeholder="Select or Search by Address"
-          ></input>
-        </div>
-        <div>
-          <label>Addresses with Amounts</label>
-          <Textarea />
-        </div>
+        <BodyHeader/>
+        <TokenInput/>
+        <Textarea />
         {errorMessage.length !== 0 && (
           <div className="border border-red-700 text-red-700 flex items-center p-1">
             <ExclamationCircleOutlined />
@@ -76,6 +65,7 @@ function Disperse() {
             </div>
           </div>
         )}
+
         {dupError.length !== 0 && (
           <>
             <div className="flex justify-between">

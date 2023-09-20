@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const options = ['Light', 'Dark'];
-  const [selectedOption, setSelectedOption] = useState('Light');
+  const options = ["Light", "Dark"];
+  const [selectedOption, setSelectedOption] = useState("Light");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -16,13 +16,13 @@ function Dropdown() {
 
   return (
     <div className="relative inline-block text-left">
-      <div className=''>
+      <div className="">
         <button
           type="button"
           onClick={toggleDropdown}
           className="inline-flex justify-center w-full text-sm font-bold text-gray-700 border-2  focus:outline-none focus:ring focus:ring-opacity-50 rounded-full px-8 py-4"
         >
-          {selectedOption }
+          {selectedOption}
           <svg
             className="-mr-1 ml-2 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,10 @@ function Dropdown() {
                 onClick={() => handleOptionClick(option)}
                 className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
-                {option} {selectedOption === option && <span className="float-left">&#10003;</span>}
+                {option}{" "}
+                {selectedOption === option && (
+                  <span className="float-left">&#10003;</span>
+                )}
               </button>
             ))}
           </div>
@@ -59,4 +62,3 @@ function Dropdown() {
 }
 
 export default Dropdown;
-
