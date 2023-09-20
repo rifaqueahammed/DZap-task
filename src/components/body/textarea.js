@@ -7,7 +7,7 @@ const Textarea = () => {
 
 return (
   <div className="flex flex-col gap-2">
-    <div className="flex justify-between">
+    <div className="flex jus">
     <label>Addresses with Amounts</label>
     <p>Upload File</p>
     </div>

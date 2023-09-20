@@ -2,11 +2,11 @@ import React from 'react'
 
 function BodyHeader() {
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 md:gap-1'>
        <h3 className="text-3xl font-black">Prepare to scatter</h3>
        <p>We support the following Networks</p>
        <div>
-         <ul className='flex justify-start items-center gap-3'>
+         <ul className='flex flex-col md:flex-row md:justify-start md:items-center gap-1 md:gap-3 '>
           <li className='p-4 hover:shadow-md rounded-md'>
             <button className='flex justify-center items-center'>
               <img src='https://www.gatherdao.com/static/media/ethereum-oval.bc107f510b40acf5ca685f3236969a9e.svg' alt=''></img>

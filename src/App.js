@@ -8,7 +8,7 @@ function App() {
   const [address, setAddress] =useState("");
   return (
     <AddressContext.Provider value={{address,setAddress}}>
-      <div className="App">
+      <div className="App w-full">
         <Layout/>
         </div>
     </AddressContext.Provider>
