@@ -55,10 +55,7 @@ function Disperse() {
   };
 
   return (
-    <div className="flex flex-col gap-3">
-      <div>
-        <h1 className="">Scatter steps</h1>
-      </div>
+    <div className="flex flex-col gap-3 p-5">
       <div className="flex flex-col rounded-lg gap-3">
         <BodyHeader/>
         <TokenInput/>
