@@ -15,11 +15,11 @@ function Disperse() {
   const [errorMessage, setErrorMessage] = useState([]);
   const [dupError, setDupError] = useState([]);
 
+
   const onSubmit = () => {
     let res;
     try {
       if (address !== "") res = validateaddressWithAmount(address);
-      console.log(res)
       setErrorMessage(res.errors);
       setDupError(res.duplicateAddress);
     } catch (error) {
@@ -33,6 +33,8 @@ function Disperse() {
       if (address !== "") res = keepFirstOneAddress(address);
       setAddress(res);
       setDupError([]);
+      const validation = validateaddressWithAmount(res);
+      setErrorMessage(validation.errors);
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +45,10 @@ function Disperse() {
     try {
       if (address !== "") res = combineBalancesAddress(address);
       setAddress(res);
-      setDupError([])
+      setDupError([]);
+      const validation = validateaddressWithAmount(res);
+      setErrorMessage(validation.errors);
+
     } catch (error) {
       console.log(error);
     }
