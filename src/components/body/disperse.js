@@ -73,9 +73,9 @@ function Disperse() {
 
         {dupError.length !== 0 && (
           <>
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-col md:flex-row">
               <p className="text-red-700">Duplicated</p>
-              <div className="flex gap-2 ">
+              <div className="flex gap-2 justify-center">
                 <button className="text-red-700" onClick={keepFirstOne}>
                   Keep the first one
                 </button>
