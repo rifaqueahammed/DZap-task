@@ -19,6 +19,7 @@ function Disperse() {
     let res;
     try {
       if (address !== "") res = validateaddressWithAmount(address);
+      console.log(res)
       setErrorMessage(res.errors);
       setDupError(res.duplicateAddress);
     } catch (error) {
@@ -31,6 +32,7 @@ function Disperse() {
     try {
       if (address !== "") res = keepFirstOneAddress(address);
       setAddress(res);
+      setDupError([]);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +43,7 @@ function Disperse() {
     try {
       if (address !== "") res = combineBalancesAddress(address);
       setAddress(res);
+      setDupError([])
     } catch (error) {
       console.log(error);
     }
